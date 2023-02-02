@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stats</title>
     <link rel="stylesheet" href="style.css">
+    <link id="favicon" rel="shortcut icon" type="image/png" href="https://cdn.discordapp.com/ephemeral-attachments/1007329887222235186/1070692690502635661/grid_0.webp" />
 </head>
 
 
@@ -40,6 +41,7 @@
     const servUp = document.querySelector("#status");
     const playerTemp = document.querySelector("template#player")
     const playerList = document.querySelector(".player-list")
+    const favicon = document.querySelector("#favicon");
 
 
     async function getStats(){
@@ -64,6 +66,8 @@
             newPlayer.querySelector("img").src = "https://mc-heads.net/avatar/"+playerInfo['name']
             playerList.appendChild(newPlayer)
         }
+
+        favicon.href=servStats['favicon'];
         
 
 
