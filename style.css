@@ -15,15 +15,26 @@ body {
     margin: auto;
 }
 
+.header .title{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    max-width: 85vw;
+    align-items: center;
+}
+
 .header h1{
     text-size-adjust: auto;
 }
 
-.header h1 span{
+.header h1#serv-ip{
+    width: 0%;
     color: orange;
     font-size: 3rem; 
-    text-size-adjust: auto;
+    margin-left: .3rem;
+    width: 100%;
+    
     /* text-shadow: 1px 1px 13px orange; */
+    
 }
 
 .header #status{
@@ -86,3 +97,26 @@ body {
 .serv-icon img{
     border-radius: 0 0 1rem 0;
 }
+
+.type-writer{
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .1em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .1em;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s 3.5s step-end infinite; 
+}
+
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+  /* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
