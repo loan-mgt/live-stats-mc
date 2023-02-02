@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class="header">
+        <h1>Server: <span>Play.Tchoutchou.ovh</span> </h1>
+        <p id="status" class="down">...</p>
+    </div>
+
+    <div class="section-player-list">
+        <h2>Player List</h2>
+        <div class="player-list">
+
+        </div>
+        <template id="player">
+            <div class="player">
+            <img src="tmp.png"/>
+            <p id="player-name">....</p>
+            </div>
+        </template>
+    </div>
+
+    
+</body>
+
+<script defer>
+    const servUp = document.querySelector("#status");
+    const playerTemp = document.querySelector("template#player")
+    const playerList = document.querySelector(".player-list")
+
+
+    async function getStats(){
+        const servStats = await fetch("https://mcapi.us/server/status?ip=play.tchoutchou.ovh&port=25565");
+        const servStatsJson  = await servStats.json();
+        return servStatsJson
+    }
+
+    async function showServInfo(){
+        const servStats = await getStats();
+        console.log("servStats",servStats)
+        servUp.innerHTML = "up: <span>"+servStats['online'] +"</span>  now: "+ servStats['players']['now'] +"  max: "+ servStats['players']['max'] 
+        if (servStats['online'] == true){
+            servUp.classList.remove("down")
+        }
+
+        newPlayer = playerTemp.content.cloneNode(true);
+        newPlayer.querySelector("#player-name").innerHTML ="hello"
+
+        for (const playerInfo of servStats['players']['sample'] ){
+            playerList.appendChild(newPlayer)
+        }
+        
+
+
+
+    }
+
+    showServInfo();
+</script>
+
+</html>
