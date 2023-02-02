@@ -6,6 +6,8 @@ body {
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .header{
@@ -13,9 +15,14 @@ body {
     margin: auto;
 }
 
+.header h1{
+    text-size-adjust: auto;
+}
+
 .header h1 span{
     color: orange;
-    font-size: 3rem;
+    font-size: 3rem; 
+    text-size-adjust: auto;
     /* text-shadow: 1px 1px 13px orange; */
 }
 
@@ -42,8 +49,40 @@ body {
     width: 90%;
 }
 
-.player{
+.player-list{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 2rem;
 }
 
+.player{
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    width: 80%;
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,0.2);
+    padding: 1rem;
+}
+
+.player img{
+    max-height: 10vh;
+}
+
+.player p{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.serv-icon{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.serv-icon img{
+    border-radius: 0 0 1rem 0;
+}
