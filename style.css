@@ -104,7 +104,7 @@ body {
     white-space: nowrap; /* Keeps the content on a single line */
     letter-spacing: .1em;
     animation: 
-        typing 3.5s steps(40, end),
+        typing 3.5s steps(33, end),
         blink-caret .75s 3.5s step-end infinite; 
 }
 
