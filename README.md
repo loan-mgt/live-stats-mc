@@ -26,5 +26,5 @@ As shown above the web page is already hosted on github page, but if you prefer 
 
 
 ## 🔧 Info Query
-The server status info is retrieved thanks to this api [mcapi.us](mcapi.us). Not all server are compatible, you may have a `server protocol is unknown`
+The server status info is retrieved thanks to this api [mcapi.us](https://mcapi.us/). Not all server are compatible, you may have a `server protocol is unknown`
 
