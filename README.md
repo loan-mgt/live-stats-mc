@@ -1,4 +1,4 @@
-# [live-stats-mc](https://qypol342.github.io/live-stats-mc?ip=simplyvanilla.co)
+# [Live Stats For Minecraft Server](https://qypol342.github.io/live-stats-mc?ip=simplyvanilla.co)
 ![](src/icon.png)
 
 Simple web page to display active player on a minecraft server
