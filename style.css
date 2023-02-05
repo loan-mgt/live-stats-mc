@@ -31,7 +31,7 @@ body {
     color: orange;
     font-size: 3rem; 
     margin-left: .3rem;
-    width: 100%;
+    width: fit-content;
     
     /* text-shadow: 1px 1px 13px orange; */
     
@@ -112,7 +112,7 @@ body {
 /* The typing effect */
 @keyframes typing {
     from { width: 0 }
-    to { width: 100% }
+    to { width: 100%; max-width: fit-content; }
 }
   
   /* The typewriter cursor effect */
