@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stats</title>
     <link rel="stylesheet" href="style.css">
-    <link id="favicon" rel="shortcut icon" type="image/png" href="https://cdn.discordapp.com/ephemeral-attachments/1007329887222235186/1070692690502635661/grid_0.webp" />
+    <link id="favicon" rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/Qypol342/live-stats-mc/907b309ccb53e144f9cbfdc92d2dc79eab005432/src/icon.png" />
 </head>
 
 
@@ -16,8 +16,10 @@
         <div class="title">
             <h1 >Server: </h1>
             <h1 id="serv-ip" class="type-writer" style="display:none;">Play.Tchoutchou.ovh</h1>
+            <input id="serv-in" type="text" style="display: none;">
         </div>
         <p id="status" class="down">...</p>
+        <button id="submit" style="display: none;" >Go</button>
     </div>
 
     <div class="section-player-list">
@@ -35,7 +37,7 @@
     </div>
 
     <div class="serv-icon">
-        <img id="serv-icon" src="data:image/png;base64,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">
+        <img id="serv-icon" src="https://raw.githubusercontent.com/Qypol342/live-stats-mc/907b309ccb53e144f9cbfdc92d2dc79eab005432/src/icon.png">
     </div>
 
     
@@ -64,10 +66,30 @@
         return servStatsJson
     }
 
+    function showServInput(){
+        document.querySelector(".section-player-list").style.display ="none";
+            document.querySelector("#status").style.display ="none";
+
+            document.querySelector("#submit").style.display ="block";
+            document.querySelector("#serv-in").style.display ="block";
+
+            document.querySelector("#submit").addEventListener("click", () => {
+                document.location.href="?ip="+document.querySelector("#serv-in").value;
+            })
+
+    }
+
     async function showServInfo(){
-        if(!servIP){return}
+        if(!servIP){
+            showServInput();              
+            return null
+        }
+
+      
         const servStats = await getStats();
         console.log("servStats",servStats)
+
+        if (servStats['server'] =="success"){
         servUp.innerHTML = "up : <span>"+servStats['online'] +"</span>  now : "+ servStats['players']['now'] +"  max : "+ servStats['players']['max'] 
         if (servStats['online'] == true){
             servUp.classList.remove("down")
@@ -84,6 +106,7 @@
 
         favicon.href = servStats['favicon'];
         servIcon.src = servStats['favicon'];
+        }
         
         if (servStats['server']['protocol'] == -1){
             let tempError = document.createElement("p");
