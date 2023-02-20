@@ -126,6 +126,18 @@ body {
 }
 
 
+#submit{
+    padding: .5rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+input{
+    margin-left: 1rem;
+}
+
+
+
 
 /* The typing effect */
 @keyframes typing {

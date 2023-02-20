@@ -41,7 +41,7 @@
     </div>
 
 
-    <div class="error-list">
+    <div class="error-list" style="display: none;">
         <div class="error">
             <p> There is no server at this ip</p>
         </div>
@@ -59,6 +59,7 @@
     const servIcon = document.querySelector("img#serv-icon");
     const urlParams = new URLSearchParams(window.location.search);
     const servIP = urlParams.get('ip');
+    const error = urlParams.get('error');
     const servPort = urlParams.get('port') ? urlParams.get('port') : 25565
 
     servIpTitle.innerHTML = servIP;
@@ -86,7 +87,22 @@
 
     }
 
+    function showServInputWithError(){
+        document.querySelector('.error-list').style.display ="flex";
+        showServInput();
+
+    }
+
+
+
     async function showServInfo(){
+
+        if(error !== null){
+            console.log("error")
+            showServInputWithError();
+            return null;
+        }
+
         if(!servIP){
             showServInput();              
             return null
@@ -95,25 +111,30 @@
       
         const servStats = await getStats();
         console.log("servStats",servStats)
-        servIpTitle.style.display = "block";
-
-        if (servStats['server'] =="success"){
-        servUp.innerHTML = "up : <span>"+servStats['online'] +"</span>  now : "+ servStats['players']['now'] +"  max : "+ servStats['players']['max'] 
-        if (servStats['online'] == true){
-            servUp.classList.remove("down")
-        }
-
         
-        playerList.innerHTML = "";
-        for (const playerInfo of servStats['players']['sample'] ){
-            newPlayer = playerTemp.content.cloneNode(true);
-            newPlayer.querySelector("#player-name").innerHTML = playerInfo['name']
-            newPlayer.querySelector("img").src = "https://mc-heads.net/avatar/"+playerInfo['name']
-            playerList.appendChild(newPlayer)
-        }
+        console.log("serv",servStats['status'] )
 
-        favicon.href = servStats['favicon'];
-        servIcon.src = servStats['favicon'];
+        if (await servStats['status'] == "success"){
+            servIpTitle.style.display = "block";
+            servUp.innerHTML = "up : <span>"+servStats['online'] +"</span>  now : "+ servStats['players']['now'] +"  max : "+ servStats['players']['max'] 
+            if (servStats['online'] == true){
+                servUp.classList.remove("down")
+            }
+
+            
+            playerList.innerHTML = "";
+            for (const playerInfo of servStats['players']['sample'] ){
+                newPlayer = playerTemp.content.cloneNode(true);
+                newPlayer.querySelector("#player-name").innerHTML = playerInfo['name']
+                newPlayer.querySelector("img").src = "https://mc-heads.net/avatar/"+playerInfo['name']
+                playerList.appendChild(newPlayer)
+            }
+
+            favicon.href = servStats['favicon'];
+            servIcon.src = servStats['favicon'];
+        }else if(servStats['status'] == "error"){
+            console.log("redirect error")
+            document.location.href="?error";
         }
         
         if (servStats['server']['protocol'] == -1){
