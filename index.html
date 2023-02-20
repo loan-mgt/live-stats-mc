@@ -40,6 +40,13 @@
         <img id="serv-icon" src="https://raw.githubusercontent.com/Qypol342/live-stats-mc/907b309ccb53e144f9cbfdc92d2dc79eab005432/src/icon.png">
     </div>
 
+
+    <div class="error-list">
+        <div class="error">
+            <p> There is no server at this ip</p>
+        </div>
+    </div>
+
     
 </body>
 
@@ -55,7 +62,7 @@
     const servPort = urlParams.get('port') ? urlParams.get('port') : 25565
 
     servIpTitle.innerHTML = servIP;
-    servIpTitle.style.display = "block";
+    
 
     console.log("url info", servIP, servPort)
 
@@ -88,6 +95,7 @@
       
         const servStats = await getStats();
         console.log("servStats",servStats)
+        servIpTitle.style.display = "block";
 
         if (servStats['server'] =="success"){
         servUp.innerHTML = "up : <span>"+servStats['online'] +"</span>  now : "+ servStats['players']['now'] +"  max : "+ servStats['players']['max'] 
