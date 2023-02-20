@@ -1,14 +1,16 @@
 
 <div align="center">
 <a href="https://github.com/Qypol342/live-stats-mc">
-    <img src="src/icon.png" alt="Logo" width="80" height="80">
+    <img  src="src/icon.png" alt="Logo"  height="150">
   </a>
 
-  <a href="https://qypol342.github.io/live-stats-mc?ip=simplyvanilla.co">
+    
   <h3 align="center">Live Stats For Minecraft Server</h3>
-  </a>
-
+  
+    
   <p align="center">Simple web page to display active player on a minecraft server</p>
+  <p align="center">
+      <a href="https://qypol342.github.io/live-stats-mc?ip=simplyvanilla.co">exemple</a></p>
 
 
 
