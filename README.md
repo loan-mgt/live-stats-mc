@@ -32,6 +32,10 @@ Here is an example for `simplyvanilla.co` server:
 <img src="assets/example.png" height=300>
 </a>
 
+### :warning: Note
+The Minecraft server used in the example (`simplyvanilla.co`) is not owned or operated by me, and I have never played on it. It is used solely as an example for demonstration purposes.
+
+
 </br>
 
 # 📮 Hosting
