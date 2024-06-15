@@ -10,7 +10,7 @@
     
   <p align="center">Simple web page to display active player on a minecraft server</p>
   <p align="center">
-      <a href="https://qypol342.github.io/live-stats-mc?ip=simplyvanilla.co">example</a></p>
+      <a href="https://loan-mgt.github.io/live-stats-mc?ip=simplyvanilla.co">example</a></p>
 
 
 
